@@ -1,4 +1,4 @@
-import { DiaryEntry } from '../types'
+import { DiaryEntry, NonSensitiveInfoDiaryEntry } from '../types'
 import diaryData from './diaries.json'
 
 //  En TS hay una cadena de prioridad en busqueda de extensiones para importar archivos:
