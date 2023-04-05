@@ -9,4 +9,6 @@ const diaries: DiaryEntry[] = diaryData as DiaryEntry[]
 
 export const getEntries = (): DiaryEntry[] => diaries
 
+export const getEntriesWithOutSensitiveInfo = (): NonSensitiveInfoDiaryEntry[] => diaries
+
 export const addEntry = (): undefined => undefined

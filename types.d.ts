@@ -14,3 +14,5 @@ export interface DiaryEntry {
 // la diferencia entre type (es como cualquier otro tipo ej Boolean y que Ts permite hacer el propio el typo que yo necesite)
 //  e interface (que es un contrato que debe tener un objeto, en el cual yo puedo usar los type que defini a mi necesidad)
 // esto se podria hacer con un type pero la interface esta preparada para ser extendida con el extend
+
+export type NonSensitiveInfoDiaryEntry = Pick<DiaryEntry, 'id' | 'date' | 'weather' | 'visibility'> 
