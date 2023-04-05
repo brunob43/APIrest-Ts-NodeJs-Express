@@ -1,8 +1,12 @@
-import { DiaryEntry } from "../types";
-import diaryData from "./diaries.json";
+import { DiaryEntry } from '../types'
+import diaryData from './diaries.json'
 
-const diaries: Array<DiaryEntry> = diaryData as Array<DiaryEntry>
+//  En TS hay una cadena de prioridad en busqueda de extensiones para importar archivos:
+//  seria: ".tsx", ".ts", ".node", ".js", ".json" . En EcmaModules es obligatorio poner las extensiones
+//  en TS no.
 
-export const getEntries = () => diaries
+const diaries: DiaryEntry[] = diaryData as DiaryEntry[]
 
-export const addEntry = () => null
+export const getEntries = (): DiaryEntry[] => diaries
+
+export const addEntry = (): undefined => undefined
