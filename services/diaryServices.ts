@@ -1,4 +1,4 @@
-import { DiaryEntry, NonSensitiveInfoDiaryEntry, Visibility, Weather } from '../types'
+import { DiaryEntry, NewDiaryEntry, NonSensitiveInfoDiaryEntry } from '../types'
 import diaryData from './diaries.json'
 
 //  En TS hay una cadena de prioridad en busqueda de extensiones para importar archivos:
@@ -29,13 +29,10 @@ export const getEntriesWithoutSensitiveInfo = (): NonSensitiveInfoDiaryEntry[] =
     }
   })
 }
-export const addDiary = (newDiaryEntry): DiaryEntry => {
+export const addDiary = (newDiaryEntry: NewDiaryEntry): DiaryEntry => {
   const newDiary = {
     id: Math.max(...diaries.map(d => d.id)) + 1,
-    date,
-    weather,
-    visibility,
-    comment
+    ...newDiaryEntry
   }
   diaries.push(newDiary)
   return newDiary

@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
     weather,
     visibility,
     comment
- })
+  })
   res.json(newDiaryEntry)
 })
 
