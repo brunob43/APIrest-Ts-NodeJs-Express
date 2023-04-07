@@ -1,4 +1,4 @@
-import { NewDiaryEntry } from './types'
+import { NewDiaryEntry, Weather, Visibility } from './types'
 
 const parseComment = (commentFromRequest: any): string => {
   if (!isString(commentFromRequest)) {
@@ -14,9 +14,9 @@ const parseDate = (dateFromRequest: any): string => {
   return dateFromRequest
 }
 
-const parseWeather = (weatherFromRequest: any): string => {
-  if (!isString(weatherFromRequest) || !isDate(weatherFromRequest)) {
-    throw new Error('Incorrect or missing date')
+const parseWeather = (weatherFromRequest: any): Weather => {
+  if (!isString(weatherFromRequest) || !isWeather(weatherFromRequest)) {
+    throw new Error('Incorrect or missing weather')
   }
   return weatherFromRequest
 }
@@ -29,6 +29,10 @@ const isString = (string: string): boolean => {
 
 const isDate = (date: string): boolean => {
   return Boolean(Date.parse(date))
+}
+
+const isWeather = (string: string): boolean => {
+  return ['sunny', 'rainy', 'cloudy', 'wendy', 'stormy'].includes(string)
 }
 
 // -----------------------------------------------------------
