@@ -1,6 +1,7 @@
 import express from 'express'
 // EcmaScriptModules
 import * as diaryServices from '../services/diaryServices'
+import toNewDiaryEntry from '../utils'
 
 const router = express.Router()
 
@@ -18,15 +19,13 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   try {
-    const { date, weather, visibility, comment } = req.body
-
     const newDiaryEntry = toNewDiaryEntry(req.body)
 
-    const addedDiaryEntry = diaryServices.addDiary
+    const addedDiaryEntry = diaryServices.addDiary(newDiaryEntry)
 
     res.json(addedDiaryEntry)
   } catch (e) {
-    res.status(400).send(e.message)
+    res.status(400).send(e)
   }
 })
 
