@@ -21,7 +21,7 @@ const parseWeather = (weatherFromRequest: any): Weather => {
   return weatherFromRequest
 }
 
-const parseVisibility = (visibilityFromRequest: any): Weather => {
+const parseVisibility = (visibilityFromRequest: any): Visibility => {
   if (!isString(visibilityFromRequest) || !isVisibility(visibilityFromRequest)) {
     throw new Error('Incorrect or missing visibility')
   }
