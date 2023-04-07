@@ -1,7 +1,5 @@
 // este es un fichero que TS siempre mira y busca por defecto, aca estaran todos los tipados que queremos definir y uililizar
 
-export type Visibility = 'great' | 'good' | 'ok' | 'poor'
-
 export enum Weather {
   Sunny = 'sunny',
   Rainy = 'rainy',
@@ -10,6 +8,12 @@ export enum Weather {
   Stormy = 'stormy'
 }
 
+export enum Visibility {
+  Great = 'great',
+  Good = 'good',
+  Ok = 'ok',
+  Poor = 'poor'
+}
 export interface DiaryEntry {
   id: number
   date: string
