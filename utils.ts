@@ -31,8 +31,8 @@ const isDate = (date: string): boolean => {
   return Boolean(Date.parse(date))
 }
 
-const isWeather = (string: string): boolean => {
-  return ['sunny', 'rainy', 'cloudy', 'wendy', 'stormy'].includes(string)
+const isWeather = (param: any): boolean => {
+  return Object.values(Weather).includes(param)
 }
 
 // -----------------------------------------------------------
